@@ -1,98 +1,109 @@
+/* GLOBAL STYLES */
 html { scroll-behavior: smooth; }
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     background-color: #000000;
     color: #ffffff;
-    line-height: 1.8;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents side-scrolling on mobile */
 }
 
-/* Navigation */
+/* NAVIGATION - FIXED FOR MOBILE */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 15px 5%;
     background: #000;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #222;
 }
-.logo { font-weight: 900; color: #007bff; letter-spacing: 2px; }
-.nav-links a { color: white; text-decoration: none; margin-left: 20px; }
-.hire-btn { background: #007bff; padding: 8px 16px; border-radius: 4px; }
+.logo { 
+    font-weight: 900; 
+    color: #007bff; 
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+}
+.hire-btn { 
+    background: #007bff; 
+    padding: 5px 12px; 
+    border-radius: 4px; 
+}
 
-/* HERO SECTION - Where your circle image lives */
+/* HERO SECTION */
 #hero { 
-    min-height: 80vh; 
+    min-height: 70vh; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    text-align: center; 
+    text-align: center;
+    padding: 40px 20px;
 }
-
-.hero-img-wrapper {
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center;
-}
-
 .hero-circle-pic {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     border: 4px solid #007bff;
     object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    margin-bottom: 20px;
 }
-
-.hero-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1 { font-size: 3.5rem; line-height: 1.1; margin: 10px 0; }
+h1 { font-size: 3rem; line-height: 1.2; margin: 10px 0; }
 .blue-text { color: #007bff; }
-.cta-main {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #fff;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 25px;
+
+/* ABOUT SECTION */
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.profile-pic-square {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    border: 2px solid #007bff;
 }
 
-/* Sections General */
-section { padding: 80px 10%; opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
-section.visible { opacity: 1; transform: translateY(0); }
-
-/* Gallery */
+/* GALLERY */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 15px;
 }
-.gallery-item { border-radius: 10px; overflow: hidden; border: 1px solid #333; }
-.gallery-item img { width: 100%; display: block; }
+.gallery-item img { width: 100%; border-radius: 8px; }
 
-/* About Section */
-.about-container { display: flex; align-items: flex-start; gap: 60px; flex-wrap: wrap; }
-.about-left { flex: 1; min-width: 250px; }
-.about-right { flex: 2; min-width: 300px; }
-.profile-pic-square { width: 100%; max-width: 400px; border-radius: 20px; border: 3px solid #007bff; }
-.about-title { margin-top: 0; color: #007bff; }
-
-/* Form wrapper */
-.form-wrapper { background: #000; border: none; }
-iframe { background: transparent; }
-
-footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #111; }
-
-@media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    .about-container { flex-direction: column; text-align: center; }
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Stacks the name and links */
+        gap: 10px;
+        text-align: center;
+    }
+    .nav-links {
+        gap: 10px;
+    }
+    h1 {
+        font-size: 2rem !important; /* Shrinks title so it doesn't wrap badly */
+    }
+    .hero-circle-pic {
+        width: 140px;
+        height: 140px;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
 }
