@@ -1,55 +1,34 @@
-/* GLOBAL STYLES */
+/* --- PC VIEW (Main Styles) --- */
 html { scroll-behavior: smooth; }
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background-color: #000000;
     color: #ffffff;
-    line-height: 1.6;
-    overflow-x: hidden; /* Prevents side-scrolling on mobile */
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
-/* NAVIGATION - FIXED FOR MOBILE */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 20px 10%;
     background: #000;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #222;
 }
-.logo { 
-    font-weight: 900; 
-    color: #007bff; 
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-.nav-links {
-    display: flex;
-    gap: 15px;
-}
-.nav-links a { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 0.9rem; 
-}
-.hire-btn { 
-    background: #007bff; 
-    padding: 5px 12px; 
-    border-radius: 4px; 
-}
+.logo { font-weight: 900; color: #007bff; letter-spacing: 2px; }
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; }
+.hire-btn { background: #007bff; padding: 8px 16px; border-radius: 4px; }
 
-/* HERO SECTION */
 #hero { 
-    min-height: 70vh; 
+    min-height: 80vh; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    text-align: center;
-    padding: 40px 20px;
+    text-align: center; 
 }
 .hero-circle-pic {
     width: 180px;
@@ -57,53 +36,53 @@ nav {
     border-radius: 50%;
     border: 4px solid #007bff;
     object-fit: cover;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
     margin-bottom: 20px;
 }
-h1 { font-size: 3rem; line-height: 1.2; margin: 10px 0; }
+h1 { font-size: 3.5rem; line-height: 1.1; margin: 10px 0; }
 .blue-text { color: #007bff; }
-
-/* ABOUT SECTION */
-.about-container {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.profile-pic-square {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 15px;
-    border: 2px solid #007bff;
+.cta-main {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 25px;
 }
 
-/* GALLERY */
+section { padding: 80px 10%; opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+section.visible { opacity: 1; transform: translateY(0); }
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
+    gap: 20px;
 }
-.gallery-item img { width: 100%; border-radius: 8px; }
+.gallery-item img { width: 100%; border-radius: 10px; border: 1px solid #333; }
 
-/* MOBILE RESPONSIVE FIXES */
-@media (max-width: 600px) {
+.about-container { display: flex; align-items: flex-start; gap: 60px; flex-wrap: wrap; }
+.about-left { flex: 1; min-width: 250px; }
+.about-right { flex: 2; min-width: 300px; }
+.profile-pic-square { width: 100%; max-width: 400px; border-radius: 20px; border: 3px solid #007bff; }
+
+footer { text-align: center; padding: 40px; color: #444; }
+
+/* --- MOBILE VIEW FIXES --- */
+@media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stacks the name and links */
-        gap: 10px;
-        text-align: center;
-    }
-    .nav-links {
-        gap: 10px;
-    }
-    h1 {
-        font-size: 2rem !important; /* Shrinks title so it doesn't wrap badly */
-    }
-    .hero-circle-pic {
-        width: 140px;
-        height: 140px;
-    }
-    .about-container {
         flex-direction: column;
-        text-align: center;
+        padding: 15px;
+        gap: 10px;
     }
+    .logo { font-size: 1rem; text-align: center; }
+    .nav-links { gap: 10px; }
+    .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+    
+    h1 { font-size: 2.2rem; }
+    #hero { padding: 60px 20px; }
+    .hero-circle-pic { width: 140px; height: 140px; }
+    
+    .about-container { flex-direction: column; text-align: center; gap: 30px; }
+    .about-left, .about-right { min-width: 100%; }
 }
