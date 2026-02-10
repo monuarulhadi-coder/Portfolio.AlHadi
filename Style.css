@@ -1,0 +1,98 @@
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.8;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo { font-weight: 900; color: #007bff; letter-spacing: 2px; }
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; }
+.hire-btn { background: #007bff; padding: 8px 16px; border-radius: 4px; }
+
+/* HERO SECTION - Where your circle image lives */
+#hero { 
+    min-height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+.hero-img-wrapper {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-circle-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #007bff;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+.hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 { font-size: 3.5rem; line-height: 1.1; margin: 10px 0; }
+.blue-text { color: #007bff; }
+.cta-main {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+/* Sections General */
+section { padding: 80px 10%; opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+section.visible { opacity: 1; transform: translateY(0); }
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.gallery-item { border-radius: 10px; overflow: hidden; border: 1px solid #333; }
+.gallery-item img { width: 100%; display: block; }
+
+/* About Section */
+.about-container { display: flex; align-items: flex-start; gap: 60px; flex-wrap: wrap; }
+.about-left { flex: 1; min-width: 250px; }
+.about-right { flex: 2; min-width: 300px; }
+.profile-pic-square { width: 100%; max-width: 400px; border-radius: 20px; border: 3px solid #007bff; }
+.about-title { margin-top: 0; color: #007bff; }
+
+/* Form wrapper */
+.form-wrapper { background: #000; border: none; }
+iframe { background: transparent; }
+
+footer { text-align: center; padding: 40px; color: #444; border-top: 1px solid #111; }
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .about-container { flex-direction: column; text-align: center; }
+}
